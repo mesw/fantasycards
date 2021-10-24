@@ -29,7 +29,7 @@ The five basic stats are subdivided into two stats each.
 |Love
 |Hate
 
-|Personality
+|Wisdom
 |Braveness
 |Cowardness
 
@@ -37,7 +37,7 @@ The five basic stats are subdivided into two stats each.
 |Scientific
 |Magic
 
-|Power
+|Fairness
 |Kindness
 |Feared
 |===
@@ -46,7 +46,7 @@ The five basic stats are subdivided into two stats each.
 .The basic stats are calculated based on the sub-stats.
 ```
 e.g.
-body = (strength + power)/2
+body = (strength + Fairness)/2
 ```
 
 == Image
@@ -86,7 +86,7 @@ image::images/strength-speed.drawio.png[]
 .Love and Hate
 image::images/love-hate.drawio.png[]
 
-=== Personality
+=== Wisdom
 .Braveness and Cowardness
 image::images/braveness-cowardness.drawio.png[]
 
@@ -94,7 +94,7 @@ image::images/braveness-cowardness.drawio.png[]
 .Scientific and Magic
 image::images/scientific-magic.drawio.png[]
 
-=== Power
+=== Fairness
 .Kindness and Feared
 image::images/kindness-feared.drawio.png[]
 
@@ -119,6 +119,31 @@ The random parameters have no effect on the stats and are not influenced by them
 ** color
 ** wear and tear
 ** effects
+
+=== Examples
+
+Here are some exaple images to illustrate how the images could be composed.
+
+.Simplified matrix with one image per property
+image::images/example-cards-property-matrix.drawio.png[]
+
+The depictions should be organized in layers, that can be stacked in all possible combinations
+with as few adjustments as possible.
+
+.Example layers
+image::images/example-cards-property-images.drawio.png[]
+
+Each image should be compatible with all possible combinations of other images.
+
+.Example image with dominant sub-stats: Strength, Hate, Brave, Kindness, Scientific
+image::images/example-cards-property-combinations-example-1.drawio.png[]
+
+.Example image with dominant sub-stats: Speed, Love, Cowardness, Feared, Magic
+image::images/example-cards-property-combinations-example-2.drawio.png[]
+
+.Example image with balanced sub-stats, resulting in dominant base-stats: Body, Soul, Wisdom, Fairness, Intelligence, 
+image::images/example-cards-property-combinations-example-3.drawio.png[]
+
 
 
 == Game Mechanics
