@@ -10,8 +10,18 @@ Fantasy Cards is a card game, inspired by the card game "Fantasia(TM)".
 
 The current demo is available here:
 
-.live demo link:
+.card demo link:
+https://mesw.github.io/fantasycards/build/FantasyCards.html
+
+NOTE: There is still some fuzzyness around the property names. Some property names diverge from the naming in this document.
+
+
+=== Past Demos
+
+.webassembly demo link:
 https://mesw.github.io/fantasycards/build/wasm-test.html
+
+
 
 == Card Layout
 
