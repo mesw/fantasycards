@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>Card.qml</file>
+        <file>PropertySet.qml</file>
+        <file>PropertyBar.qml</file>
+        <file>PropertyPack.qml</file>
+    </qresource>
+</RCC>
