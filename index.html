@@ -446,6 +446,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_introduction">Introduction</a></li>
 <li><a href="#_demo">Demo</a>
 <ul class="sectlevel2">
+<li><a href="#_current_demo">Current Demo</a></li>
 <li><a href="#_past_demos">Past Demos</a></li>
 </ul>
 </li>
@@ -453,21 +454,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_stats">Stats</a></li>
 <li><a href="#_image">Image</a>
 <ul class="sectlevel2">
-<li><a href="#_layout">Layout</a></li>
-<li><a href="#_artwork">Artwork</a></li>
-<li><a href="#_body">Body</a></li>
-<li><a href="#_soul">Soul</a></li>
-<li><a href="#_wisdom">Wisdom</a></li>
-<li><a href="#_intelligence">Intelligence</a></li>
-<li><a href="#_fairness">Fairness</a></li>
 <li><a href="#_additional_random_parameters">Additional Random Parameters</a></li>
 <li><a href="#_examples">Examples</a></li>
 </ul>
 </li>
 <li><a href="#_game_mechanics">Game Mechanics</a>
 <ul class="sectlevel2">
-<li><a href="#_leveling_cards">Leveling Cards</a></li>
-<li><a href="#_gaining_cards">Gaining Cards</a></li>
 <li><a href="#_progress">Progress</a></li>
 </ul>
 </li>
@@ -486,9 +478,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_demo">Demo</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The current demo is available here:</p>
-</div>
+<div class="sect2">
+<h3 id="_current_demo">Current Demo</h3>
 <div class="paragraph">
 <div class="title">card demo link:</div>
 <p><a href="https://mesw.github.io/fantasycards/build/FantasyCards.html" class="bare">https://mesw.github.io/fantasycards/build/FantasyCards.html</a></p>
@@ -504,6 +495,7 @@ There is still some fuzzyness around the property names. Some property names div
 </td>
 </tr>
 </table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_past_demos">Past Demos</h3>
@@ -543,53 +535,14 @@ There is still some fuzzyness around the property names. Some property names div
 <div class="paragraph">
 <p>The five basic stats are subdivided into two stats each.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 1. List of all stats and sub-stats.</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Basic-Stat</th>
-<th class="tableblock halign-left valign-top">Substat 1</th>
-<th class="tableblock halign-left valign-top">Substat 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Body</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Strength</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Speed</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Soul</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Love</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hate</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Wisdom</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Braveness</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cowardness</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Intelligence</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Scientific</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Magic</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fairness</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kindness</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Feared</p></td>
-</tr>
-</tbody>
-</table>
 <div class="listingblock">
 <div class="title">The basic stats are calculated based on the sub-stats.</div>
 <div class="content">
-<pre class="CodeRay highlight"><code>e.g.
-body = (strength + Fairness)/2</code></pre>
+<pre class="CodeRay highlight"><code>TBD
+e.g.
+core-stat = abs(substatA - substatB)
+
+C = A + B - abs(subA - subB)/2</code></pre>
 </div>
 </div>
 </div>
@@ -598,87 +551,7 @@ body = (strength + Fairness)/2</code></pre>
 <h2 id="_image">Image</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The image is generated dynamically based on the stats.
-There are many images and combinations,
-so it should be difficult to get the same card more than once.</p>
-</div>
-<div class="sect2">
-<h3 id="_layout">Layout</h3>
-<div class="paragraph">
-<p>The image consists of many small images that can be combined in any combination.</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/image-layout.drawio.png" alt="image layout.drawio">
-</div>
-<div class="title">Figure 3. Principal Layout</div>
-</div>
-<div class="ulist">
-<div class="title">Alternative Layouts</div>
-<ul>
-<li>
-<p>Da Vinci&#8217;s David like Wheel</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_artwork">Artwork</h3>
-<div class="paragraph">
-<p>The artwork is based on the stats.
-The higher the stat, the more extreme the depiction in the image.</p>
-</div>
-<div class="paragraph">
-<p>When the two substats are balanced, the image shifts to a third way of expression to symbolize equilibrium.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_body">Body</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/strength-speed.drawio.png" alt="strength speed.drawio">
-</div>
-<div class="title">Figure 4. Strengh and Speed</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_soul">Soul</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/love-hate.drawio.png" alt="love hate.drawio">
-</div>
-<div class="title">Figure 5. Love and Hate</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_wisdom">Wisdom</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/braveness-cowardness.drawio.png" alt="braveness cowardness.drawio">
-</div>
-<div class="title">Figure 6. Braveness and Cowardness</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_intelligence">Intelligence</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/scientific-magic.drawio.png" alt="scientific magic.drawio">
-</div>
-<div class="title">Figure 7. Scientific and Magic</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_fairness">Fairness</h3>
-<div class="imageblock">
-<div class="content">
-<img src="images/kindness-feared.drawio.png" alt="kindness feared.drawio">
-</div>
-<div class="title">Figure 8. Kindness and Feared</div>
-</div>
+<p>The image is prerendered and chosen based on what stat is dominant.</p>
 </div>
 <div class="sect2">
 <h3 id="_additional_random_parameters">Additional Random Parameters</h3>
@@ -686,103 +559,88 @@ The higher the stat, the more extreme the depiction in the image.</p>
 <p>There are additional random parameters that change how the player looks.
 The random parameters have no effect on the stats and are not influenced by them.</p>
 </div>
-<div class="ulist">
-<div class="title">Random Parameters just for optical variation</div>
-<ul>
-<li>
-<p>Player and Compagion</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Age</p>
-</li>
-<li>
-<p>Sex</p>
-</li>
-<li>
-<p>Skin color</p>
-</li>
-<li>
-<p>Hair color</p>
-</li>
-<li>
-<p>Hair style</p>
-</li>
-<li>
-<p>Eye shape</p>
-</li>
-<li>
-<p>Mouth shape</p>
-</li>
-<li>
-<p>Size</p>
-</li>
-<li>
-<p>Proportions</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Items</p>
-<div class="ulist">
-<ul>
-<li>
-<p>color</p>
-</li>
-<li>
-<p>wear and tear</p>
-</li>
-<li>
-<p>effects</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_examples">Examples</h3>
-<div class="paragraph">
-<p>Here are some exaple images to illustrate how the images could be composed.</p>
+<div class="ulist">
+<div class="title">Here are some happy examples that were all created with the same property dominances:</div>
+<ul>
+<li>
+<p>Strength</p>
+</li>
+<li>
+<p>Love</p>
+</li>
+<li>
+<p>Brave</p>
+</li>
+<li>
+<p>Science</p>
+</li>
+<li>
+<p>Cute</p>
+</li>
+</ul>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/example-cards-property-matrix.drawio.png" alt="example cards property matrix.drawio">
+<img src="images/vqgan_imagenet_f16_16384_Angel%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Angel Strength Love Brave Science Cute 0200">
 </div>
-<div class="title">Figure 9. Simplified matrix with one image per property</div>
-</div>
-<div class="paragraph">
-<p>The depictions should be organized in layers, that can be stacked in all possible combinations
-with as few adjustments as possible.</p>
+<div class="title">Figure 3. Angel</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/example-cards-property-images.drawio.png" alt="example cards property images.drawio">
+<img src="images/vqgan_imagenet_f16_16384_Ghost%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Ghost Strength Love Brave Science Cute 0200">
 </div>
-<div class="title">Figure 10. Example layers</div>
-</div>
-<div class="paragraph">
-<p>Each image should be compatible with all possible combinations of other images.</p>
+<div class="title">Figure 4. Ghost</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/example-cards-property-combinations-example-1.drawio.png" alt="example cards property combinations example 1.drawio">
+<img src="images/vqgan_imagenet_f16_16384_Man%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Man Strength Love Brave Science Cute 0200">
 </div>
-<div class="title">Figure 11. Example image with dominant sub-stats: Strength, Hate, Brave, Kindness, Scientific</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/example-cards-property-combinations-example-2.drawio.png" alt="example cards property combinations example 2.drawio">
-</div>
-<div class="title">Figure 12. Example image with dominant sub-stats: Speed, Love, Cowardness, Feared, Magic</div>
+<div class="title">Figure 5. Man</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/example-cards-property-combinations-example-3.drawio.png" alt="example cards property combinations example 3.drawio">
+<img src="images/vqgan_imagenet_f16_16384_Monster%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Monster Strength Love Brave Science Cute 0200">
 </div>
-<div class="title">Figure 13. Example image with balanced sub-stats, resulting in dominant base-stats: Body, Soul, Wisdom, Fairness, Intelligence,</div>
+<div class="title">Figure 6. Monster</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vqgan_imagenet_f16_16384_Tree%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Tree Strength Love Brave Science Cute 0200">
+</div>
+<div class="title">Figure 7. Tree</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vqgan_imagenet_f16_16384_Water%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Water Strength Love Brave Science Cute 0200">
+</div>
+<div class="title">Figure 8. Water</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vqgan_imagenet_f16_16384_Woman%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Woman Strength Love Brave Science Cute 0200">
+</div>
+<div class="title">Figure 9. Woman</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/vqgan_imagenet_f16_16384_Zombie%20Strength%20Love%20Brave%20Science%20Cute_0200.png" alt="vqgan imagenet f16 16384 Zombie Strength Love Brave Science Cute 0200">
+</div>
+<div class="title">Figure 10. Zombie</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+the look and feel as well as the types of characters may change.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -790,20 +648,9 @@ with as few adjustments as possible.</p>
 <div class="sect1">
 <h2 id="_game_mechanics">Game Mechanics</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>The attacker chooses the stat. The defender chooses the sub-stat.
-Both battles are averaged and the winner is chosen based on who has the higher stat.</p>
-</div>
-<div class="sect2">
-<h3 id="_leveling_cards">Leveling Cards</h3>
-<div class="paragraph">
-<p>The winner gains points, the loser loses points. If the stat is zero, the card is lost entirely.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_gaining_cards">Gaining Cards</h3>
-<div class="paragraph">
-<p>The winner can choose if he gets the card, or gains points on the winning card.</p>
+<div class="imageblock">
+<div class="content">
+<img src="round-activities.png" alt="Diagram" width="1554" height="536">
 </div>
 </div>
 <div class="sect2">
@@ -817,7 +664,7 @@ Both battles are averaged and the winner is chosen based on who has the higher s
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-10-26 14:45:25 +0200
+Last updated 2021-11-01 23:42:12 +0100
 </div>
 </div>
 </body>

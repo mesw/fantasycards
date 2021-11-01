@@ -1,0 +1,46 @@
+@startuml
+
+start
+
+:Challenge;
+note right: challenger picks a stat
+
+if (Defense Successful?) then (yes)
+:points from challenger to defender;
+
+if (Defender wants Counter Challenge?) then (yes)
+note left: defender chooses stat
+if (Counter Challenge Successful?) then (yes)
+:initial challenger loses card;
+else (no)
+:points from counter challenger to defender;
+endif
+else (no)
+endif
+
+else (no)
+
+:points from defender to challenger;
+
+if (Defender wants Counter Challenge?) then (yes)
+if (Counter Challenge Successful?) then (yes)
+:initial challenger loses points;
+else (no)
+:defender loses card;
+endif
+else (no)
+if (Challenger wants Final Challenge?) then (yes)
+if (Final Challenge Successful?) then (yes)
+:defender loses card;
+else (no)
+:challenger loses points;
+endif
+else (no)
+endif
+endif
+
+endif
+
+end
+
+@enduml

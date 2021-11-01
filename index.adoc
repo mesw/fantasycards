@@ -8,7 +8,7 @@ Fantasy Cards is a card game, inspired by the card game "Fantasia(TM)".
 
 == Demo
 
-The current demo is available here:
+=== Current Demo
 
 .card demo link:
 https://mesw.github.io/fantasycards/build/FantasyCards.html
@@ -40,86 +40,20 @@ image::images/skill-set.drawio.png[]
 
 The five basic stats are subdivided into two stats each.
 
-.List of all stats and sub-stats.
-|===
-|Basic-Stat|Substat 1|Substat 2
-
-|Body
-|Strength
-|Speed
-
-|Soul
-|Love
-|Hate
-
-|Wisdom
-|Braveness
-|Cowardness
-
-|Intelligence
-|Scientific
-|Magic
-
-|Fairness
-|Kindness
-|Feared
-|===
 
 
 .The basic stats are calculated based on the sub-stats.
 ```
+TBD
 e.g.
-body = (strength + Fairness)/2
+core-stat = abs(substatA - substatB)
+
+C = A + B - abs(subA - subB)/2
 ```
 
 == Image
 
-The image is generated dynamically based on the stats.
-There are many images and combinations,
-so it should be difficult to get the same card more than once.
-
-=== Layout
-
-The image consists of many small images that can be combined in any combination.
-
-.Principal Layout
-image::images/image-layout.drawio.png[]
-
-.Alternative Layouts
-* Da Vinci's David like Wheel
-* ...
-
-
-=== Artwork
-
-The artwork is based on the stats.
-The higher the stat, the more extreme the depiction in the image.
-
-
-
-When the two substats are balanced, the image shifts to a third way of expression to symbolize equilibrium.
-
-
-
-=== Body
-.Strengh and Speed
-image::images/strength-speed.drawio.png[]
-
-=== Soul
-.Love and Hate
-image::images/love-hate.drawio.png[]
-
-=== Wisdom
-.Braveness and Cowardness
-image::images/braveness-cowardness.drawio.png[]
-
-=== Intelligence
-.Scientific and Magic
-image::images/scientific-magic.drawio.png[]
-
-=== Fairness
-.Kindness and Feared
-image::images/kindness-feared.drawio.png[]
+The image is prerendered and chosen based on what stat is dominant.
 
 
 === Additional Random Parameters
@@ -127,58 +61,40 @@ image::images/kindness-feared.drawio.png[]
 There are additional random parameters that change how the player looks.
 The random parameters have no effect on the stats and are not influenced by them.
 
-.Random Parameters just for optical variation
-* Player and Compagion
-** Age
-** Sex
-** Skin color
-** Hair color
-** Hair style
-** Eye shape
-** Mouth shape
-** Size
-** Proportions
-* Items
-** color
-** wear and tear
-** effects
 
 === Examples
 
-Here are some exaple images to illustrate how the images could be composed.
-
-.Simplified matrix with one image per property
-image::images/example-cards-property-matrix.drawio.png[]
-
-The depictions should be organized in layers, that can be stacked in all possible combinations
-with as few adjustments as possible.
-
-.Example layers
-image::images/example-cards-property-images.drawio.png[]
-
-Each image should be compatible with all possible combinations of other images.
-
-.Example image with dominant sub-stats: Strength, Hate, Brave, Kindness, Scientific
-image::images/example-cards-property-combinations-example-1.drawio.png[]
-
-.Example image with dominant sub-stats: Speed, Love, Cowardness, Feared, Magic
-image::images/example-cards-property-combinations-example-2.drawio.png[]
-
-.Example image with balanced sub-stats, resulting in dominant base-stats: Body, Soul, Wisdom, Fairness, Intelligence, 
-image::images/example-cards-property-combinations-example-3.drawio.png[]
+.Here are some happy examples that were all created with the same property dominances:
+* Strength
+* Love
+* Brave
+* Science
+* Cute
 
 
+.Angel
+image::images/vqgan_imagenet_f16_16384_Angel Strength Love Brave Science Cute_0200.png[]
+.Ghost
+image::images/vqgan_imagenet_f16_16384_Ghost Strength Love Brave Science Cute_0200.png[]
+.Man
+image::images/vqgan_imagenet_f16_16384_Man Strength Love Brave Science Cute_0200.png[]
+.Monster
+image::images/vqgan_imagenet_f16_16384_Monster Strength Love Brave Science Cute_0200.png[]
+.Tree
+image::images/vqgan_imagenet_f16_16384_Tree Strength Love Brave Science Cute_0200.png[]
+.Water
+image::images/vqgan_imagenet_f16_16384_Water Strength Love Brave Science Cute_0200.png[]
+.Woman
+image::images/vqgan_imagenet_f16_16384_Woman Strength Love Brave Science Cute_0200.png[]
+.Zombie
+image::images/vqgan_imagenet_f16_16384_Zombie Strength Love Brave Science Cute_0200.png[]
+
+NOTE: the look and feel as well as the types of characters may change.
 
 == Game Mechanics
 
-The attacker chooses the stat. The defender chooses the sub-stat.
-Both battles are averaged and the winner is chosen based on who has the higher stat.
+plantuml::images/round-activities.puml[]
 
-=== Leveling Cards
-The winner gains points, the loser loses points. If the stat is zero, the card is lost entirely.
-
-=== Gaining Cards
-The winner can choose if he gets the card, or gains points on the winning card.
 
 === Progress
 The player moves through a world of cards, that can be challenged. Sometimes the player is challenged as well.
