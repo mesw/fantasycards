@@ -1,5 +1,7 @@
 #include "cardrandomizer.h"
 
+#include <QDir>
+#include <QFile>
 #include <QRandomGenerator>
 
 
@@ -28,9 +30,9 @@ qreal CardRandomizer::speed() const
     return m_speed;
 }
 
-qreal CardRandomizer::intelligence() const
+qreal CardRandomizer::science() const
 {
-    return m_intelligence;
+    return m_science;
 }
 
 qreal CardRandomizer::magic() const
@@ -66,7 +68,7 @@ void CardRandomizer::randomize()
     setStrength(m_randomizer.bounded(0,100));
     setSpeed(m_randomizer.bounded(0,100));
 
-    setIntelligence(m_randomizer.bounded(0,100));
+    setScience(m_randomizer.bounded(0,100));
     setMagic(m_randomizer.bounded(0,100));
 
     setBrave(m_randomizer.bounded(0,100));
@@ -74,6 +76,28 @@ void CardRandomizer::randomize()
 
     setCute(m_randomizer.bounded(0,100));
     setFear(m_randomizer.bounded(0,100));
+
+
+    QList<QString> list;
+
+
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the archer of punk in beautiful sacred dome.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the dragon of sports in golden hidden cathedral.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the dragon of techno in beautiful cloud sand dune.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the ghost of peace in horror smoke sea.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the keeper of glass in serene cloud sea.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the knight of thunder in serene underwater forest.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the lion of fitness in burning secret vulcano.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the queen of steampunk in lovely underwater cave.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the spirit of rainbow in lightray sacred church.png"));
+    list.append(QString("https://mesw.github.io/fantasyarts/faces/the toad of fitness in rotten secret church.png"));
+
+
+
+
+    setImagePath(list.at(m_randomizer.bounded(0,list.length()-1)));
+
+
 
 }
 
@@ -117,14 +141,14 @@ void CardRandomizer::setSpeed(qreal speed)
     emit speedChanged(m_speed);
 }
 
-void CardRandomizer::setIntelligence(qreal intelligence)
+void CardRandomizer::setScience(qreal science)
 {
     qWarning("Floating point comparison needs context sanity check");
-    if (qFuzzyCompare(m_intelligence, intelligence))
+    if (qFuzzyCompare(m_science, science))
         return;
 
-    m_intelligence = intelligence;
-    emit intelligenceChanged(m_intelligence);
+    m_science = science;
+    emit scienceChanged(m_science);
 }
 
 void CardRandomizer::setMagic(qreal magic)
@@ -175,4 +199,17 @@ void CardRandomizer::setFear(qreal fear)
 
     m_fear = fear;
     emit fearChanged(m_fear);
+}
+
+const QString &CardRandomizer::imagePath() const
+{
+    return m_imagePath;
+}
+
+void CardRandomizer::setImagePath(const QString &newImagePath)
+{
+    if (m_imagePath == newImagePath)
+        return;
+    m_imagePath = newImagePath;
+    emit imagePathChanged();
 }

@@ -1,4 +1,4 @@
-QT += quick
+QT += quick core
 
 CONFIG += c++11
 
@@ -8,6 +8,7 @@ CONFIG += c++11
 
 SOURCES += \
         cardrandomizer.cpp \
+        cardstack.cpp \
         main.cpp
 
 RESOURCES += qml.qrc
@@ -24,4 +25,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    cardrandomizer.h
+    cardrandomizer.h \
+    cardstack.h
+
+DISTFILES += \

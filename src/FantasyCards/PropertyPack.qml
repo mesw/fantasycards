@@ -10,7 +10,7 @@ Item {
     property string baseName: "Base"
     property real positiveValue: 50
     property real negativeValue: 50
-    property real baseValue: Math.abs(positiveValue-negativeValue)
+    property real baseValue: (positiveValue+negativeValue)/2 // Math.abs(positiveValue-negativeValue)
 
 
     property bool toggled: true
