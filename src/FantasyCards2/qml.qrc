@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>PlayerStack.qml</file>
+        <file>EnemyStack.qml</file>
+        <file>Card.qml</file>
+        <file>Stat.qml</file>
+        <file>StatSelect.qml</file>
+    </qresource>
+</RCC>
