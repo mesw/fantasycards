@@ -347,6 +347,9 @@ unchanged
 flipped and added transparency by mesw licensed under CC-0.
 the original file is called magic.png
 
+### 7.) [\"Rose Flower (pyxeledit document and image)\"](https://opengameart.org/content/rose-flower-pyxeledit-document-and-image) by Lovecraft licensed CC-0
+unchanged
+
 ## Thank you to everybody who gave input!
 
 Special thanks to wolfi who owns the original card set that was the inspiration for this game.
