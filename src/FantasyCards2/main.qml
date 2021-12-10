@@ -327,11 +327,11 @@ Created with [Qt for WebAssembly](https://doc.qt.io/qt-5/wasm.html)
 ## Assets used:
 
 ### 1.) [\"Fossil Cave\"](https://opengameart.org/content/fossil-cave) by Écrivain licensed under CC0
-Modified by mesw licensed under CC0
+Modified by mesw licensed under CC0.
 The original file can be found in the folder: original
 
 ### 2.) [\"Trading Card Template\"](https://opengameart.org/content/trading-card-template) by Avery Ross licensed CC-BY 4.0
-Modified by mesw licensed under CC-BY 4.0
+Modified by mesw licensed under CC-BY 4.0.
 Original files are in folder AtkDefTCGTemplate
 
 ### 3.) [\"Fantasy UI Box\"](https://opengameart.org/content/fantasy-ui-box) by StumpyStrust licensed CC-0
@@ -344,7 +344,7 @@ unchanged
 unchanged
 
 ### 6.) [\"Wizard\"](https://opengameart.org/content/wizard-0) by Blarumyrran (blarumyrran@gmail.com) licensed CC-0
-flipped and added transparency by mesw licensed under CC-0
+flipped and added transparency by mesw licensed under CC-0.
 the original file is called magic.png
 
 # thank you to everybody who gave input!
