@@ -5,8 +5,8 @@
 
 FantasyCardsGame::FantasyCardsGame()
 {
+    m_elapsed.start();
 
-    ++level;
     shuffleEnemy();
 
     QRandomGenerator rand(42);
@@ -56,7 +56,9 @@ Card FantasyCardsGame::enemy() const
 
 void FantasyCardsGame::shuffleEnemy() {
 
-    QRandomGenerator rand(69+level);
+    setLevel(getLevel()+1);
+
+    QRandomGenerator rand(m_elapsed.elapsed()+level);
 
 
     for (int i = 0; i < level * level; i++){
@@ -84,12 +86,12 @@ void FantasyCardsGame::shuffleEnemy() {
 
     setOver(false);
     emit enemyChanged();
-    level++;
+    emit enemyCardCountChanged();
 }
 
 void FantasyCardsGame::enemySelect(QString statName)
 {
-    if(m_enemyCards.length() > 0 && m_playerCards.length() > 0)
+    if(m_enemyCards.length() > 0 && m_playerCards.length() > 0) {
         if (statName == "strength" && player().strength > enemy().strength)
             win();
         else if (statName == "speed" && player().speed > enemy().speed)
@@ -122,6 +124,7 @@ void FantasyCardsGame::enemySelect(QString statName)
             win();
         else
             lose();
+    }
 
     setEnemyCardCount(m_enemyCards.length());
     setPlayerCardCount(m_playerCards.length());
@@ -171,7 +174,7 @@ void FantasyCardsGame::setLevel(quint16 newLevel)
 
 void FantasyCardsGame::resetLevel()
 {
-    setLevel({}); // TODO: Adapt to use your actual default value
+    setLevel(1); // TODO: Adapt to use your actual default value
 }
 
 void FantasyCardsGame::win() {
@@ -181,6 +184,8 @@ void FantasyCardsGame::win() {
     m_enemyCards.removeFirst();
     emit playerChanged();
     emit enemyChanged();
+    emit playerCardCountChanged();
+    emit enemyCardCountChanged();
     qDebug() << "WIN";
     setWinner(1);
 }
@@ -192,6 +197,8 @@ void FantasyCardsGame::lose() {
     m_playerCards.removeFirst();
     emit playerChanged();
     emit enemyChanged();
+    emit playerCardCountChanged();
+    emit enemyCardCountChanged();
     qDebug() << "LOSE";
     setWinner(-1);
 }

@@ -9,23 +9,20 @@ Item {
 
     property real xByX : game.level
 
-    property real cols: xByX
-    property real rows: xByX
-
     Grid {
         id: enemyGrid
         anchors.fill: parent
 
         spacing: 1
 
-        columns: root.cols
-        rows: root.rows
+        columns: root.xByX
+        rows: root.xByX
 
         Repeater {
-            model: root.cols * root.rows
+            model: root.xByX * root.xByX
             Card {
-                width: root.width / root.cols - enemyGrid.spacing
-                height: root.height / root.rows - enemyGrid.spacing
+                width: root.width / root.xByX - enemyGrid.spacing
+                height: root.height / root.xByX - enemyGrid.spacing
                 state: "covered"
                 MouseArea {
                     anchors.fill: parent
@@ -34,8 +31,8 @@ Item {
                         if (!game.over)
                             activeCard.visible = true
                         else {
-
-                            game.shuffleEnemy()
+                            if (game.playerCardCount > 0)
+                                game.shuffleEnemy()
                             activeCard.visible = true
                         }
                     }

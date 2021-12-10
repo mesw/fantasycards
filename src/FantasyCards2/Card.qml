@@ -13,7 +13,6 @@ Item {
     implicitWidth: 271
     implicitHeight: 402
 
-
     property string selectedStat: ""
     property string formerState: ""
 
@@ -31,20 +30,6 @@ Item {
         visible = !game.over
 
     }
-
-
-//    Timer {
-//        id: timer
-//    }
-
-//    function delay(delayTime, cb) {
-//        timer.interval = delayTime;
-//        timer.repeat = false;
-//        timer.triggered.connect(cb);
-//        timer.triggered.connect(function () { if (game.imagePath !== "") root.state = formerState})
-//        timer.start();
-//    }
-
 
     Image {
         id: frontImage
@@ -158,6 +143,9 @@ Item {
         border.color:"black"
 
         clip: true
+
+        color: "transparent"
+
         Image {
             anchors.fill: parent
             source: card.imagePath

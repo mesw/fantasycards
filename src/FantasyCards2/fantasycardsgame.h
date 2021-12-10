@@ -1,6 +1,7 @@
 #ifndef FANTASYCARDSGAME_H
 #define FANTASYCARDSGAME_H
 
+#include <QElapsedTimer>
 #include <QObject>
 
 #include "assets.h"
@@ -109,6 +110,8 @@ private:
 
     quint16 m_playerCardCount;
     quint16 m_enemyCardCount;
+
+    QElapsedTimer m_elapsed;
 
 
     void win();

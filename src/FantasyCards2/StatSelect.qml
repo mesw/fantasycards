@@ -27,8 +27,11 @@ Item {
     Text {
         id: nameTxt
         text: "Intelligence"
-        anchors.fill: parent
-        anchors.margins: root.width / 15
+
+        anchors.centerIn: parent
+
+        height: parent.height * 0.42
+        width: parent.width * 0.8
 
         minimumPixelSize: 5
         font.pixelSize: 120
@@ -82,3 +85,9 @@ Item {
 
 
 }
+
+/*##^##
+Designer {
+    D{i:0;formeditorZoom:8}
+}
+##^##*/
