@@ -347,11 +347,11 @@ unchanged
 flipped and added transparency by mesw licensed under CC-0.
 the original file is called magic.png
 
-# thank you to everybody who gave input!
+## Thank you to everybody who gave input!
 
-special thanks to wolfi who owns the original card set that was the inspiration for this game.
+Special thanks to wolfi who owns the original card set that was the inspiration for this game.
 
-greetings to everybody who plays this. Have fun!
+Greetings to everybody who plays this. Have fun!
 "
 
             }
